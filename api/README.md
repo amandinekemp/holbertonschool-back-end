@@ -10,13 +10,12 @@
 
 ## ➤ Menu:
 
-* [➤ Description]()
-* [➤ Resources]()
-* [➤ General]()
-* [➤ Requirements]()
-* [➤ More Info]()
-* [➤ Tasks]()
-* [➤ Author]()
+* [➤ Description](https://github.com/amandinekemp/holbertonschool-back-end/tree/main/api#-description)
+* [➤ Resources](https://github.com/amandinekemp/holbertonschool-back-end/tree/main/api#-resources)
+* [➤ General](https://github.com/amandinekemp/holbertonschool-back-end/tree/main/api#-general)
+* [➤ Requirements](https://github.com/amandinekemp/holbertonschool-back-end/tree/main/api#-requirements)
+* [➤ Tasks](https://github.com/amandinekemp/holbertonschool-back-end/tree/main/api#author-)
+* [➤ Author](https://github.com/amandinekemp/holbertonschool-back-end/tree/main/api#author-)
 
 ----------
 

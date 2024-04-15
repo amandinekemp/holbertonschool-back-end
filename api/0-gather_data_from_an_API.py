@@ -14,10 +14,10 @@ def employed_todo(employee_id):
     user_response = requests.get(user_url)
     todo_response = requests.get(todo_url)
 
-    user = user_response.json()
+    user_data = user_response.json()
     todo_data = todo_response.json()
 
-    employee_name = user.get['name']
+    employee_name = user_data['name']
     total_number_of_tasks = len(todo_data)
     number_of_done_tasks = sum(1 for task in todo_data if task['completed'])
     completed_tasks_titles = [task['title']

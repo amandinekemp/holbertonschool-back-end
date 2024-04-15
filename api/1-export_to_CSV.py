@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Using a REST API, for a given employee ID, returns information about his/her"""
+"""This script uses a REST API to retrieve information on the progress of an employee's
+to-do list based on their ID, and exports the data to a CSV file."""
 
 
 import csv

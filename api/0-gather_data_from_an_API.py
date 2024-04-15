@@ -1,38 +1,35 @@
 #!/usr/bin/python3
-"""Retrieves information about the progress of an employee's task list
-matching the specified id."""
-import requests
-from sys import argv
+"""Using a REST API, for a given employee ID, returns information about his/her"""
 
-api_url = "https://jsonplaceholder.typicode.com"
+
+import requests
+import sys
+
+
+def employed_todo(employee_id):
+    base_url = 'https://jsonplaceholder.typicode.com/'
+    user_url = f"{base_url}users/{employee_id}"
+    todo_url = f"{base_url}todos?userId={employee_id}"
+    
+    user_response = requests.get(user_url)
+    todo_response = requests.get(todo_url)
+
+    user = user_response.json()
+    todo_data = todo_response.json()
+
+    employee_name = user.get['name']
+    total_number_of_tasks = len(todo_data)
+    number_of_done_tasks = sum(1 for task in todo_data if task['completed'])
+    completed_tasks_titles = [task['title']
+                              for task in todo_data if task['completed']]
+
+    print("Employee {} is done with tasks({}/{}):"
+          .format(employee_name, number_of_done_tasks, total_number_of_task))
+    for task_title in completed_tasks_titles:
+        print("\t {}".format(task_title))
 
 
 if __name__ == "__main__":
-    # Retrieves employee information from the API
-    data = requests.get(f"{api_url}/users/{argv[1]}")
-    employee_data = data.json()
 
-    # Retrieves the employee's tasks from the API
-    list_tasks = requests.get(f"{api_url}/todos?userId={argv[1]}")
-    tasks_data = list_tasks.json()
-
-    # Filters completed tasks
-    tasks_complete = [task for task in tasks_data if task["completed"]]
-
-    # Retrieves the employee's name
-    employee_name = employee_data["name"]
-    # Number of completed tasks
-    nb_tasks_done = len(tasks_complete)
-    # Total number of tasks
-    total_task = len(tasks_data)
-
-    # Displays information about the progress of the task list
-    print(
-        "Employee {} is done with tasks({}/{}):".format(
-            employee_name, nb_tasks_done, total_task
-        )
-    )
-
-    # Displays the list of completed tasks
-    for task in tasks_complete:
-        print(f"\t {task['title']}")
+    employee_id = int(sys.argv[1])
+    employed_todo(employee_id)

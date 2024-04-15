@@ -24,7 +24,7 @@ def employed_todo(employee_id):
                               for task in todo_data if task['completed']]
 
     print("Employee {} is done with tasks({}/{}):"
-          .format(employee_name, number_of_done_tasks, total_number_of_task))
+          .format(employee_name, number_of_done_tasks, total_number_of_tasks))
     for task_title in completed_tasks_titles:
         print("\t {}".format(task_title))
 

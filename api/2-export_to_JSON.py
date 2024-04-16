@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Using a REST API, for a given employee ID, returns information about his/her"""
+"""Using a REST API, for a given employee ID,
+returns information about his/her"""
 
 
 import json
@@ -19,11 +20,13 @@ def employed_todo(employee_id):
     todo_data = todo_response.json()
 
     employee_name = user_data["name"]
+    # Obtaining the username of the employee
     employee_username = user_data["username"]
 
     total_number_of_tasks = len(todo_data)
     number_of_done_tasks = sum(1 for task in todo_data if task["completed"])
-    completed_tasks_titles = [task["title"] for task in todo_data if task["completed"]]
+    completed_tasks_titles = [task["title"]
+                              for task in todo_data if task["completed"]]
 
     print(
         "Employee {} is done with tasks({}/{}):".format(
@@ -33,6 +36,7 @@ def employed_todo(employee_id):
     for task_title in completed_tasks_titles:
         print("\t {}".format(task_title))
 
+    # Save data to JSON format
     completed_tasks = []
 
     for task in todo_data:

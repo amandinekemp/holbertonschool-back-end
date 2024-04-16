@@ -20,6 +20,7 @@ def employed_todo(employee_id):
     todo_data = todo_response.json()
 
     employee_name = user_data["name"]
+    # Obtaining the username of the employee
     employee_username = user_data["username"]
 
     total_number_of_tasks = len(todo_data)
@@ -34,6 +35,7 @@ def employed_todo(employee_id):
     for task_title in completed_tasks_titles:
         print("\t {}".format(task_title))
 
+    # Exporting the data to a CSV file
     with open(f"{employee_id}.csv", "w") as csvfile:
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in todo_data:

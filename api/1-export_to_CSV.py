@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""This script uses a REST API to retrieve information on the progress of an employee's
-to-do list based on their ID, and exports the data to a CSV file."""
+"""This script uses a REST API to retrieve information on the
+progress of an employee's to-do list based on their ID,
+and exports the data to a CSV file."""
 
 
 import csv
@@ -24,8 +25,10 @@ def employed_todo(employee_id):
     employee_username = user_data["username"]
 
     total_number_of_tasks = len(todo_data)
-    number_of_done_tasks = sum(1 for task in todo_data if task["completed"])
-    completed_tasks_titles = [task["title"] for task in todo_data if task["completed"]]
+    number_of_done_tasks = sum(1
+                               for task in todo_data if task["completed"])
+    completed_tasks_titles = [task["title"]
+                              for task in todo_data if task["completed"]]
 
     print(
         "Employee {} is done with tasks({}/{}):".format(
@@ -40,7 +43,8 @@ def employed_todo(employee_id):
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in todo_data:
             csvwriter.writerow(
-                [employee_id, employee_username, str(task["completed"]), task["title"]]
+                [employee_id, employee_username,
+                 str(task["completed"]), task["title"]]
             )
 
 

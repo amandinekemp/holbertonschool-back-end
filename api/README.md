@@ -21,17 +21,19 @@
 
 ## ➤ Description:
 
-An API (Application Programming Interface) is a set of rules and protocols enabling different software programs to communicate with each other. It defines the methods and data that software can use to interact with each other.
+An API (Application Programming Interface) is a programming interface that enables access to one or more services, such as data or functionalities, provided by a third-party system. It is based on a client-server architecture. REST (Representational State Transfer) is a software architecture based on the HTTP protocol, which defines a set of architectural guidelines for the creation of web applications.
 
-A REST (Representational State Transfer) API is a type of API that uses HTTP protocols to communicate between software. It uses HTTP methods such as GET, POST, PUT and DELETE to perform actions on resources.
+The six REST principles that guide API design are as follows:
 
-Microservices are a software development architecture that divides an application into small, independent, modular services, each performing a specific task. Each microservice can be developed, deployed and scaled independently of the others.
+Client-server decoupling: client and server must be developed independently to enhance portability and scalability.
+Uniform interface: all types of client device should interact with the server in a uniform way, using URIs to identify resources, representations to manipulate resources, self-describing messages and the HATEOAS principle to let the client know where to look for more information.
+Stateless: the server must not store any information about the client, except for authentication purposes. All requests must contain all the data required to process them.
+Caching: the response sent by the server must indicate whether or not it is cacheable and for how long, to reduce network latency.
+Layered system architecture: the architecture should be composed of several layers, each of which interacts only with its neighboring layers, to enhance the application's security and stability.
+Code on demand (optional): the server can provide executable code to the client, to reduce the number of essential functionalities to be pre-implemented.
+A REST API works by sending an HTTP request with an endpoint, HTTP method (GET, POST, PUT, PATCH, DELETE, OPTIONS), headers and body, and returning a representation of the requested resource with HTTP response codes (200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 500 Internal Server Error).
 
-CSV (Comma Separated Values) is a text file format used to store tabular data. Values are separated by commas, and each line represents a data entry.
-
-JSON (JavaScript Object Notation) is a lightweight, human-readable data format used to store and transmit structured data. It is based on JavaScript object notation and uses name/value pairs to represent data.
-
-Translated with DeepL.com (free version)
+There are alternatives to REST, such as the GraphQL and SOAP APIs. GraphQL is a query language that provides the client with only the data requested, using a POST method endpoint and a GraphQL query in the HTTP request body. SOAP is a messaging protocol that returns XML only, and uses requests in XML format. However, REST continues to be one of the most widely used formats for APIs, due to its simplicity, robustness and democratization.
 
 ----------
 

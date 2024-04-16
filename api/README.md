@@ -1,5 +1,5 @@
 <p align="center">
-    <img [API] src="https://images.ctfassets.net/vwq10xzbe6iz/5sBH4Agl614xM7exeLsTo7/9e84dce01735f155911e611c42c9793f/rest-api.png">
+    <img [API] src="https://assets-global.website-files.com/65686931f8b0bb6aed626331/65782ecc159c5e33da25706c_Frame_1_2_1_h3zpvn.jpeg">
 </p>
 
 ----------

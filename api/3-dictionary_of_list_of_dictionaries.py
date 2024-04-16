@@ -8,7 +8,7 @@ import requests
 
 
 def all_employed_todo():
-    base_url = 'https://jsonplaceholder.typicode.com/'
+    base_url = "https://jsonplaceholder.typicode.com/"
     user_url = f"{base_url}/users"
     todo_url = f"{base_url}/todos"
 
@@ -24,11 +24,19 @@ def all_employed_todo():
     for user in user_data:
         employee_id = user["id"]
         employee_username = user["username"]
-        tasks = [{"username": employee_username, "task": task["title"],
-                  "completed": task["completed"]}
-                  for task in todo_data if task["userId"] == employee_id]
+        tasks = []
+        for task in todo_data:
+            if task["userId"] == employee_id:
+                tasks.append(
+                    {
+                        "username": employee_username,
+                        "task": task["title"],
+                        "completed": task["completed"],
+                    }
+                )
 
         employee_data[employee_id] = tasks
+
     # Exporting the data to a JSON file
     with open("todo_all_employees.json", "w") as jsonfile:
         json.dump(employee_data, jsonfile, indent=4)
